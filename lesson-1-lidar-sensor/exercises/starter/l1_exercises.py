@@ -52,7 +52,9 @@ def print_pitch_resolution(frame, lidar_name):
     # compute vertical field-of-view from lidar calibration 
     lidar_calib = [obj for obj in frame.context.laser_calibrations if obj.name == lidar_name][0] # get laser calibration
     min_pitch = lidar_calib.beam_inclination_min
+    print("min_pitch = " + '{0:.4f}'.format(min_pitch))
     max_pitch = lidar_calib.beam_inclination_max
+    print("max_pitch = " + '{0:.4f}'.format(max_pitch))
     vfov = max_pitch - min_pitch
     print("vfov = " + '{0:.4f}'.format(vfov))
 
